@@ -17,14 +17,12 @@ jobs:
     - name: execute run py script # run the run.py to get the latest data
       run: |
         python run.py
-    - run: mkdir -p /artifacts
-
-    - run: echo hello > /artifacts/world.txt
+    - run: echo hello > world.txt
 
     - uses: actions/upload-artifact@v2
       with:
         name: my-artifact
-        path: /artifacts/world.txt
+        path: world.txt
     
     - name: Commit files
       run: |
