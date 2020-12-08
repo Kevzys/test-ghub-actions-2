@@ -19,7 +19,7 @@ jobs:
     - name: execute run py script # run the run.py to get the latest data
       run: |
         python run.py
-    - run: echo hello > world.txt
+    - run: echo hello >> world.txt
 
     - uses: actions/upload-artifact@v2
       with:
@@ -30,10 +30,10 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git pull
+        
         git add *
         git commit -m "Add changes" -a
     - name: Push changes
-      uses: ad-m/github-push-action@master
+      uses: ad-m/github-push-action@main
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
