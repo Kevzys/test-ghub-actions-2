@@ -19,21 +19,10 @@ jobs:
     - name: execute run py script # run the run.py to get the latest data
       run: |
         python run.py
+        ls
     - run: echo hello >> world.txt
 
     - uses: actions/upload-artifact@v2
       with:
         name: my-artifact
         path: world.txt
-    
-    - name: Commit files
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        
-        git add *
-        git commit -m "Add changes" -a
-    - name: Push changes
-      uses: ad-m/github-push-action@main
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
