@@ -1,5 +1,5 @@
 import requests
-import xlrd
+from xlrd import load_workbook
 
 ARKG_LINK = 'https://www.ark-funds.com/auto/trades/ARK_ARKG_Trades.xls'
 #ARKK_LINK = 'https://www.ark-funds.com/auto/trades/ARK_ARKK_Trades.xls'
