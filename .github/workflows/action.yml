@@ -14,8 +14,9 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8 #install the python needed
-    - name: install requests
+    - name: install requests and openpyxl
       run: pip install requests
+      run: pip install xlrd
     - name: execute run py script # run the run.py to get the latest data
       run: |
         python run.py
