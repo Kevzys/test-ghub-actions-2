@@ -1,5 +1,4 @@
 import requests
-from xlrd import load_workbook
 
 ARKG_LINK = 'https://www.ark-funds.com/auto/trades/ARK_ARKG_Trades.xls'
 #ARKK_LINK = 'https://www.ark-funds.com/auto/trades/ARK_ARKK_Trades.xls'
@@ -8,6 +7,6 @@ ARKG_LINK = 'https://www.ark-funds.com/auto/trades/ARK_ARKG_Trades.xls'
 
 print('Downloading excel files please wait...')
 
-wb = xlrd.load_workbook(requests.get(ARKG_LINK))
+wb = xlrd.open_workbook(requests.get(ARKG_LINK))
 sheets = wb.sheet_names()
 print(sheets)
